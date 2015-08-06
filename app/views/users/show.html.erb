@@ -2,3 +2,14 @@
   <%= gravatar_for @user %>
   <%= @user.name %>
 </h1>
+  地域:
+  <%= @user.area %>
+  <br>
+  <br>
+  プロフィール:
+  <%= @user.profile %>
+  <br>
+  <br>
+  <% if logged_in? && current_user == @user %>
+<%= link_to "編集画面へ", edit_user_path(@user) %>
+  <% end %>
